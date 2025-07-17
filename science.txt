@@ -1,0 +1,7 @@
+The sun is a star.|True
+Water boils at 100 degrees Celsius.|True
+The Earth is flat.|False
+Sharks are mammals.|False
+The human body has 206 bones.|True
+Photosynthesis occurs in plants.|True
+The moon produces its own light.|False
