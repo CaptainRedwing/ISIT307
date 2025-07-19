@@ -1,23 +1,23 @@
 <?php
 session_start();
 $nickname = $_SESSION['nickname'] ?? 'Guest';
-$score = $_SESSION['score'] ?? 0;
+$totalScore = $_SESSION['score'] ?? 0;
 
-// Destroy session after showing final message
+// End session
 session_destroy();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exit Game</title>
+    <title>Goodbye!</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
-    <h1>Thanks for playing!</h1>
-    <p>Nickname: <?= htmlspecialchars($nickname) ?></p>
-    <p>Total Score: <?= $score ?></p>
+    <h1>Thank you for playing!</h1>
+    <p><strong>Nickname:</strong> <?= htmlspecialchars($nickname) ?></p>
+    <p><strong>Total Score:</strong> <?= $totalScore ?></p>
 
     <a class="button" href="index.php">Start New Game</a>
 </div>

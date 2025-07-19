@@ -1,18 +1,20 @@
 <?php
+session_start();
+$filename = "leaderboard.txt";
 $leaderboard = [];
-$sort = $_GET['sort'] ?? 'score'; // default sorting
 
-if (file_exists("leaderboard.txt")) {
-    $lines = file("leaderboard.txt", FILE_IGNORE_NEW_LINES);
+if (file_exists($filename)) {
+    $lines = file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lines as $line) {
         list($name, $score) = explode('|', $line);
         $leaderboard[$name] = (int)$score;
     }
 
-    if ($sort == 'name') {
-        ksort($leaderboard);
+    // Sorting
+    if (isset($_GET['sort']) && $_GET['sort'] === 'name') {
+        ksort($leaderboard, SORT_STRING);
     } else {
-        arsort($leaderboard);
+        arsort($leaderboard, SORT_NUMERIC);
     }
 }
 ?>
@@ -26,8 +28,10 @@ if (file_exists("leaderboard.txt")) {
 <body>
 <div class="container">
     <h1>Leaderboard</h1>
-    <a class="button" href="?sort=name">Sort by Name</a>
-    <a class="button" href="?sort=score">Sort by Score</a>
+    <div>
+        <a class="button" href="?sort=score">Sort by Score</a>
+        <a class="button" href="?sort=name">Sort by Name</a>
+    </div>
 
     <table class="leaderboard-table">
         <tr>
