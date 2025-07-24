@@ -1,9 +1,11 @@
 /* Reset and base styling */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: "Fredoka", cursive, sans-serif;
     color: #333;
 }
 
@@ -78,4 +80,54 @@ table.leaderboard-table td {
 
 table.leaderboard-table th {
     background-color: #d3eafd;
+}
+
+body.science {
+    background-image: url('planets.jpg'); /* path is relative to styles.css location */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* optional: keeps background static when scrolling */
+}
+
+
+body.english {
+    background-image: url('english.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.animals {
+    background-image: url('jungle.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+body.colours {
+    background-image: url('colours.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.shapes {
+    background-image: url('shapes.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.numbers {
+    background-image: url('numbers.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

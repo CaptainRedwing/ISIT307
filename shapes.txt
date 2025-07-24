@@ -1,0 +1,7 @@
+A circle has three sides.|False
+A square has four equal sides.|True
+A triangle has five corners.|False
+A rectangle has four sides.|True
+A hexagon has six sides.|True
+A star is a 2D shape.|True
+A cone is flat.|False

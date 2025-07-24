@@ -1,0 +1,7 @@
+The sky is green.|False
+Bananas are yellow.|True
+Tomatoes are blue.|False
+Grass is red.|False
+Snow is white.|True
+Oranges are orange.|True
+Coal is black.|True

@@ -28,6 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2>Hello, <?= htmlspecialchars($_SESSION['nickname']) ?>!</h2>
         <a class="button" href="quiz.php?topic=science">Science Quiz</a>
         <a class="button" href="quiz.php?topic=numbers">Numbers Quiz</a>
+        <a class="button" href="quiz.php?topic=animals">Animals Quiz</a>
+        <a class="button" href="quiz.php?topic=colours">Colours Quiz</a>
+        <a class="button" href="quiz.php?topic=shapes">Shapes Quiz</a>
+        <a class="button" href="quiz.php?topic=english">English Quiz</a>
         <a class="button" href="leaderboard.php">Leaderboard</a>
         <a class="button" href="exit.php">Exit</a>
     <?php endif; ?>

@@ -1,0 +1,7 @@
+"You're" is a contraction of "you are".|True
+The word "their" shows possession.|True
+"Could of" is grammatically correct.|False
+An adjective describes a noun.|True
+"To", "too", and "two" are all used the same way.|False
+A synonym is a word that means the opposite of another word.|False
+A complete sentence must have a subject and a verb.|True

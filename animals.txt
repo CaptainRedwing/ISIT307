@@ -1,0 +1,7 @@
+A cat says meow.|True
+Elephants can fly.|False
+Fish have feathers.|False
+A dog barks.|True
+Cows give us milk.|True
+Snakes have legs.|False
+A lion is a herbivore.|False

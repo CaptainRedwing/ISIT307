@@ -13,7 +13,7 @@ if (!isset($_SESSION['score'])) {
 $_SESSION['score'] += $quizScore;
 $totalScore = $_SESSION['score'];
 
-// Update leaderboard.txt
+// Update leaderboard
 $leaderboard = [];
 $filename = "leaderboard.txt";
 
@@ -34,18 +34,20 @@ foreach ($leaderboard as $name => $score) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Quiz Results</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
-    <h1>Quiz Results</h1>
-    <p><strong>Correct:</strong> <?= $correct ?></p>
-    <p><strong>Incorrect:</strong> <?= $incorrect ?></p>
-    <p><strong>Score for this quiz:</strong> <?= $quizScore ?></p>
-    <p><strong>Total Score:</strong> <?= $totalScore ?></p>
+    <h1>🎉 Quiz Results 🎉</h1>
+    <p><strong>Nickname:</strong> <?= htmlspecialchars($nickname) ?></p>
+    <p><strong>✅ Correct:</strong> <?= $correct ?></p>
+    <p><strong>❌ Incorrect:</strong> <?= $incorrect ?></p>
+    <p><strong>⭐ Score for this quiz:</strong> <?= $quizScore ?></p>
+    <p><strong>🏆 Total Score:</strong> <?= $totalScore ?></p>
 
     <a class="button" href="index.php">Take Another Quiz</a>
     <a class="button" href="leaderboard.php">View Leaderboard</a>
