@@ -12,7 +12,7 @@ if (file_exists($filename)) {
 
     // Sorting
     if (isset($_GET['sort']) && $_GET['sort'] === 'name') {
-        ksort($leaderboard, SORT_STRING);
+        uksort($leaderboard, 'strcasecmp');
     } else {
         arsort($leaderboard, SORT_NUMERIC);
     }
@@ -22,6 +22,7 @@ if (file_exists($filename)) {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
