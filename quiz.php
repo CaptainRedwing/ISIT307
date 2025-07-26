@@ -13,13 +13,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($quizQuestions as $index => $line) {
         list($question, $answer) = explode('|', trim($line));
         $userAnswer = trim($_POST["answer$index"] ?? '');
-
         $_SESSION['userAnswers'][] = $userAnswer;
 
-        if (strcasecmp($userAnswer, trim($answer)) === 0) {
-            $correct++;
+        if ($topic === 'numbers') {
+            // For numbers quiz, calculate the result
+            $expression = explode('=', $question)[0];
+            $expected = eval('return ' . trim($expression) . ';');
+
+            if ($userAnswer === '' || $userAnswer != $expected) {
+                $incorrect++;
+            } else {
+                $correct++;
+            }
         } else {
-            $incorrect++;
+            if (strcasecmp($userAnswer, trim($answer)) === 0) {
+                $correct++;
+            } else {
+                $incorrect++;
+            }
         }
     }
 
@@ -65,8 +76,14 @@ $_SESSION['topic'] = $topic;
             <?php foreach ($quizQuestions as $index => $line): 
                 list($question, $answer) = explode('|', $line); ?>
                 <p><strong><?= htmlspecialchars($question) ?></strong></p>
-                <label><input type="radio" name="answer<?= $index ?>" value="True" required> True</label>
-                <label><input type="radio" name="answer<?= $index ?>" value="False"> False</label>
+
+                <?php if ($topic === 'numbers'): ?>
+                    <input type="text" name="answer<?= $index ?>" required>
+                <?php else: ?>
+                    <label><input type="radio" name="answer<?= $index ?>" value="True" required> True</label>
+                    <label><input type="radio" name="answer<?= $index ?>" value="False"> False</label>
+                <?php endif; ?>
+
                 <br><br>
             <?php endforeach; ?>
             <button type="submit">Submit Answers</button>
